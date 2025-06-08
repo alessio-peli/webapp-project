@@ -1,0 +1,65 @@
+body {
+  background: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.hex-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hex-row {
+  display: flex;
+  gap: 4px;
+}
+
+.offset-half {
+  margin-left: 52px;
+}
+
+.offset-center {
+  margin-left: 106px;
+}
+/* Stili per gli esagoni */
+.hex {
+  position: relative;
+  width: 100px;
+  height: 86.6px;
+  background: white;
+  /* Struttura esagoni */
+  clip-path: polygon(
+    25% 0%, 75% 0%,
+    100% 50%, 75% 100%,
+    25% 100%, 0% 50%
+  );
+  /* bordo, allienamenti vari e dettagli */
+  border: 1px solid #666;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* effetto per passaggio mouse */
+.hex:hover {
+  border-color: black;
+}
+/* effetto click attivo */
+.hex.active {
+  background-color: orange;
+}
+/* Stile per testo */
+.hex span {
+  position: absolute;
+  text-align: center;
+  pointer-events: none;
+  font-size: 14px;
+  color: #333;
+  user-select: none;
+}
