@@ -18,8 +18,9 @@ body {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  transform: rotate(90deg);
+  transform-origin: center center;
 }
-
 .hex-row {
   display: flex;
   gap: 4px;
@@ -37,6 +38,7 @@ body {
   position: relative;
   width: 100px;
   height: 86.6px;
+  transform: rotate(90deg);
   background: white;
   /* Struttura esagoni */
   clip-path: polygon(
@@ -64,6 +66,7 @@ body {
 .hex span {
   position: absolute;
   text-align: center;
+  transform: rotate(-90deg);
   pointer-events: none;
   font-size: 14px;
   color: #333;
@@ -71,6 +74,7 @@ body {
 }
 .fixed-effects {
   position: absolute;
+  transform: rotate(180deg);
   top: 40px;     /* distanza dal bordo superiore */
   right: 40px;   /* distanza dal bordo destro */
   display: flex;
@@ -97,8 +101,14 @@ body {
   font-weight: bold;
 }
 
+.hex.effect {
+  pointer-events: none;     /* Disabilita delle interazioni (temporaneo) */
+  user-select: none;        /* Evita selezione del testo */
+}
+
 .hex.effect span {
+  transform: rotate(90deg);
+  display: inline-block;
   pointer-events: none;
-  color: #222;
-  line-height: 1.2;
+  user-select: none;
 }
