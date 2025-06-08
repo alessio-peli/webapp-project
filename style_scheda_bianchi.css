@@ -66,7 +66,7 @@ body {
 .hex span {
   position: absolute;
   text-align: center;
-  transform: rotate(-90deg);
+  transform: rotate(-180deg);
   pointer-events: none;
   font-size: 14px;
   color: #333;
