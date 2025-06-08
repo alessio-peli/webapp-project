@@ -1,13 +1,19 @@
 body {
   background: #f0f0f0;
+  margin: 0;
+  font-family: sans-serif;
+  height: 100vh;
+  position: relative;  /* ESSENZIALE per posizionare .fixed-effects */
+  overflow: hidden;
+}
+
+/* Nuovo wrapper centrale per la griglia */
+.centered-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
-  font-family: sans-serif;
+  height: 100%;
 }
-
 .hex-grid {
   display: flex;
   flex-direction: column;
@@ -62,4 +68,37 @@ body {
   font-size: 14px;
   color: #333;
   user-select: none;
+}
+.fixed-effects {
+  position: absolute;
+  top: 40px;     /* distanza dal bordo superiore */
+  right: 40px;   /* distanza dal bordo destro */
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.hex.effect {
+  background-color: white;
+  border: 2px solid #666;
+  width: 90px;
+  height: 78px;
+  clip-path: polygon(
+    25% 0%, 75% 0%,
+    100% 50%, 75% 100%,
+    25% 100%, 0% 50%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.hex.effect span {
+  pointer-events: none;
+  color: #222;
+  line-height: 1.2;
 }
