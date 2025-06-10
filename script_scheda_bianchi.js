@@ -1,23 +1,27 @@
-// Variabile per evitare sovrapposizione tra click e doppio click per le sventure
-let clickTimeoutSventura = null;
+// Gestione click singolo su tratti (griglia centrale)
+let clickTimeoutTratto = null;
 
-document.querySelectorAll('.hex.sventura').forEach(hex => {
-  // Singolo click: attiva/disattiva classe 'active' con colore viola
+document.querySelectorAll('.hex:not(.sventura):not(.status)').forEach(hex => {
   hex.addEventListener('click', () => {
-    if (clickTimeoutSventura) return;
+    if (clickTimeoutTratto) return;
 
-    clickTimeoutSventura = setTimeout(() => {
-      hex.classList.toggle('active');
-      clickTimeoutSventura = null;
+    clickTimeoutTratto = setTimeout(() => {
+      const span = hex.querySelector('span');
+      const hasText = span && span.textContent.trim() !== "";
+
+      if (hasText) {
+        hex.classList.toggle('active');
+      }
+
+      clickTimeoutTratto = null;
     }, 250);
   });
 
-  // Doppio click: modifica testo all'interno dell'esagono
   hex.addEventListener('dblclick', () => {
-    clearTimeout(clickTimeoutSventura);
-    clickTimeoutSventura = null;
+    clearTimeout(clickTimeoutTratto);
+    clickTimeoutTratto = null;
 
-    const input = prompt("Inserisci un testo per questa sventura:");
+    const input = prompt("Inserisci un testo per questo tratto:");
     if (input !== null) {
       let span = hex.querySelector('span');
       if (!span) {

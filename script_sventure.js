@@ -1,26 +1,30 @@
+let clickTimeoutSventura = null;
+
 document.querySelectorAll('.hex.sventura').forEach(hex => {
-  let clickTimeout = null;
-
   hex.addEventListener('click', () => {
-    if (clickTimeout) return;
+    if (clickTimeoutSventura) return;
 
-    clickTimeout = setTimeout(() => {
-      hex.classList.toggle('active');  // toggle viola
-      clickTimeout = null;
+    clickTimeoutSventura = setTimeout(() => {
+      const span = hex.querySelector('span');
+      const hasText = span && span.textContent.trim() !== "";
+
+      if (hasText) {
+        hex.classList.toggle('active');
+      }
+
+      clickTimeoutSventura = null;
     }, 250);
   });
 
   hex.addEventListener('dblclick', () => {
-    if (clickTimeout) {
-      clearTimeout(clickTimeout);
-      clickTimeout = null;
-    }
-    const input = prompt("Inserisci testo per questa sventura:", hex.textContent.trim());
+    clearTimeout(clickTimeoutSventura);
+    clickTimeoutSventura = null;
+
+    const input = prompt("Inserisci un testo per questa sventura:");
     if (input !== null) {
       let span = hex.querySelector('span');
       if (!span) {
         span = document.createElement('span');
-        hex.textContent = '';
         hex.appendChild(span);
       }
       span.textContent = input;
