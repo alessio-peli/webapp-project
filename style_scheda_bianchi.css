@@ -3,25 +3,27 @@ body {
   margin: 0;
   font-family: sans-serif;
   height: 100vh;
-  position: relative;  /* ESSENZIALE per posizionare .fixed-effects */
+  position: relative;
   overflow: hidden;
 }
 
-/* Nuovo wrapper centrale per la griglia */
-.centered-container {
+/* GRIGLIA TRATTI */
+.tratti-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
 }
-.hex-grid {
+
+.tratti-grid {
   display: flex;
   flex-direction: column;
   gap: 4px;
   transform: rotate(90deg);
   transform-origin: center center;
 }
-.hex-row {
+
+.tratti-row {
   display: flex;
   gap: 4px;
 }
@@ -33,20 +35,15 @@ body {
 .offset-center {
   margin-left: 106px;
 }
-/* Stili per gli esagoni */
+
+/* ESAGONI BASE */
 .hex {
   position: relative;
   width: 100px;
   height: 86.6px;
   transform: rotate(90deg);
   background: white;
-  /* Struttura esagoni */
-  clip-path: polygon(
-    25% 0%, 75% 0%,
-    100% 50%, 75% 100%,
-    25% 100%, 0% 50%
-  );
-  /* bordo, allienamenti vari e dettagli */
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
   border: 1px solid #666;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -54,15 +51,15 @@ body {
   justify-content: center;
   align-items: center;
 }
-/* effetto per passaggio mouse */
+
 .hex:hover {
   border-color: black;
 }
-/* effetto click attivo */
+
 .hex.active {
   background-color: orange;
 }
-/* Stile per testo */
+
 .hex span {
   position: absolute;
   text-align: center;
@@ -72,43 +69,57 @@ body {
   color: #333;
   user-select: none;
 }
-.fixed-effects {
+
+/* STATUS E SVENTURE */
+.right-column {
   position: absolute;
-  transform: rotate(180deg);
-  top: 40px;     /* distanza dal bordo superiore */
-  right: 40px;   /* distanza dal bordo destro */
+  top: 40px;
+  right: 40px;
   display: flex;
+  flex-direction: column; /* Status in riga, sventure sotto */
+  align-items: center;
   gap: 10px;
   z-index: 10;
 }
 
-.hex.effect {
-  background-color: white;
-  border: 2px solid #666;
-  width: 90px;
-  height: 78px;
-  clip-path: polygon(
-    25% 0%, 75% 0%,
-    100% 50%, 75% 100%,
-    25% 100%, 0% 50%
-  );
+.effects-column {
   display: flex;
-  justify-content: center;
+  flex-direction: row;  /* Status in orizzontale */
+  gap: 10px;
   align-items: center;
-  text-align: center;
-  padding: 4px;
-  font-size: 11px;
+}
+
+.sventure-label {
   font-weight: bold;
-}
-
-.hex.effect {
-  pointer-events: none;     /* Disabilita delle interazioni (temporaneo) */
-  user-select: none;        /* Evita selezione del testo */
-}
-
-.hex.effect span {
-  transform: rotate(90deg);
-  display: inline-block;
-  pointer-events: none;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
   user-select: none;
+  margin-bottom: 5px;
+}
+
+.sventure-container {
+  display: flex;
+  flex-direction: column; /* Sventure in colonna */
+  gap: 10px;
+  align-items: center;
+}
+
+/* Esagoni status e sventure */
+.hex.status,
+.hex.sventura {
+  transform: rotate(90deg);  /* Mantieni forma esagono ruotata */
+}
+
+/* Testo negli status e sventure*/
+.hex.status span,
+.hex.sventura span {
+  transform: rotate(-90deg); /* Annulla rotazione per testo */
+  color: #333;
+  font-size: 14px;
+}
+
+.hex.sventura.active {
+  background-color: orangered;
+  color: white;
 }

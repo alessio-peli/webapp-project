@@ -7,53 +7,68 @@
 </head>
 <body>
 
-<div class="centered-container">
-  <div class="hex-grid">
-     <!-- Prima riga  -->
-  <div class="hex-row offset-center">
-    <div class="hex"></div>
-    <div class="hex"></div>
-    <div class="hex"></div>
-  </div>
-  
-     <!-- seconda riga  -->
-  <div class="hex-row offset-half">
-    <div class="hex"></div>
-    <div class="hex"></div>
-    <div class="hex"></div>
-    <div class="hex"></div>
-  </div>
-    <!-- terza riga  -->
-  <div class="hex-row">
-    <div class="hex"></div>
-    <div class="hex"></div>
-    <div class="hex"></div>
-    <div class="hex"></div>
-    <div class="hex"></div>
-  </div>
-   <!-- quarta riga  -->
-  <div class="hex-row offset-half">
-    <div class="hex"></div>
-    <div class="hex"></div>
-    <div class="hex"></div>
-    <div class="hex"></div>
-  </div>
-   <!-- quinta riga  -->
-  <div class="hex-row offset-center">
-    <div class="hex"></div>
-    <div class="hex"></div>
-    <div class="hex"></div>
+<div class="tratti-container">
+  <div class="tratti-grid">
+    <!-- Prima riga -->
+    <div class="tratti-row offset-center">
+      <div class="hex"></div>
+      <div class="hex"></div>
+      <div class="hex"></div>
+    </div>
+
+    <!-- Seconda riga -->
+    <div class="tratti-row offset-half">
+      <div class="hex"></div>
+      <div class="hex"></div>
+      <div class="hex"></div>
+      <div class="hex"></div>
+    </div>
+
+    <!-- Terza riga -->
+    <div class="tratti-row">
+      <div class="hex"></div>
+      <div class="hex"></div>
+      <div class="hex"></div>
+      <div class="hex"></div>
+      <div class="hex"></div>
+    </div>
+
+    <!-- Quarta riga -->
+    <div class="tratti-row offset-half">
+      <div class="hex"></div>
+      <div class="hex"></div>
+      <div class="hex"></div>
+      <div class="hex"></div>
+    </div>
+
+    <!-- Quinta riga -->
+    <div class="tratti-row offset-center">
+      <div class="hex"></div>
+      <div class="hex"></div>
+      <div class="hex"></div>
+    </div>
   </div>
 </div>
 
-<!-- Esagoni adrenalina e confusione -->
-<div class="fixed-effects">
-  <div class="hex effect"><span>adrenalina</span></div>
-  <div class="hex effect"><span>confusione</span></div>
+<!-- Colonna destra: status + sventure -->
+<div class="right-column">
+  <div class="effects-column">
+    <div class="hex status"><span>adrenalina</span></div>
+    <div class="hex status"><span>confusione</span></div>
+  </div>
+
+  <div class="sventure-label">sventure</div>
+
+  <div class="sventure-container">
+    <div class="hex sventura"></div>
+    <div class="hex sventura"></div>
+    <div class="hex sventura"></div>
+    <div class="hex sventura"></div>
+  </div>
 </div>
 
-<!-- script per i tratti/bianchi -->
+
 <script src="script_scheda_bianchi.js"></script>
-
+<script src="script_sventure.js"></script>
 </body>
 </html>
