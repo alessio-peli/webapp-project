@@ -10,7 +10,9 @@ document.querySelectorAll('.hex.sventura').forEach(hex => {
 
       if (hasText) {
         hex.classList.toggle('active');
-      }
+      } else {
+        alert("Per poter attivare una sventura, devi prima aver inserito un testo. per inserire il testo fai doppio click su un esagono a scelta");
+      }      
 
       clickTimeoutSventura = null;
     }, 250);

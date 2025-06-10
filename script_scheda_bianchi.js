@@ -11,8 +11,9 @@ document.querySelectorAll('.hex:not(.sventura):not(.status)').forEach(hex => {
 
       if (hasText) {
         hex.classList.toggle('active');
-      }
-
+      } else {
+        alert("Per poter attivare un tratto, devi prima aver inserito un testo. per inserire il testo fai doppio click su un esagono a scelta");
+      }      
       clickTimeoutTratto = null;
     }, 250);
   });
