@@ -82,6 +82,58 @@ body {
   z-index: 10;
 }
 
+/* Colonna sinistra dei token */
+.left-column {
+  position: absolute;
+  bottom: 40px; 
+  left: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+  align-items: center;
+  z-index: 10;
+}
+
+.token-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 12px;
+  border: 1.5px solid #888;
+  border-radius: 10px;
+  width: 140px;
+}
+
+.token-button {
+  font-size: 20px;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #666;
+  border-radius: 5px;
+  background-color: #eee;
+  cursor: pointer;
+}
+
+.token-button:hover {
+  background-color: #ddd;
+}
+
+.token-label {
+  font-size: 16px;
+  color: #222;
+  text-align: center;
+  user-select: none;
+  margin-top: 6px;
+}
+
+.token-box span {
+  font-size: 22px;
+  font-weight: bold;
+  user-select: none;
+}
+
 .effects-column {
   display: flex;
   flex-direction: row;  /* Status in orizzontale */

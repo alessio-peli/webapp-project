@@ -3,9 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <title>base scheda nte</title>
-  <link rel="stylesheet" href="style_scheda_bianchi.css">
+  <link rel="stylesheet" href="style_scheda.css">
 </head>
 <body>
+
+  <!-- Colonna sinistra: Token -->
+<div class="left-column">
+  <div class="token-box">
+    <button class="token-button" onclick="updateToken('bianchi', -1)">−</button>
+    <span id="token-bianchi-count">0</span>
+    <button class="token-button" onclick="updateToken('bianchi', 1)">+</button>
+    <div class="token-label">Token Bianchi</div>
+  </div>
+
+  <div class="token-box">
+    <button class="token-button" onclick="updateToken('neri', -1)">−</button>
+    <span id="token-neri-count">0</span>
+    <button class="token-button" onclick="updateToken('neri', 1)">+</button>
+    <div class="token-label">Token Neri</div>
+  </div>
+
+  <div class="token-box">
+    <button class="token-button" onclick="updateToken('causali', -1)">−</button>
+    <span id="token-causali-count">0</span>
+    <button class="token-button" onclick="updateToken('causali', 1)">+</button>
+    <div class="token-label">Token Causali</div>
+  </div>
+</div>
+
 
 <div class="tratti-container">
   <div class="tratti-grid">
@@ -68,7 +93,8 @@
 </div>
 
 
-<script src="script_scheda_bianchi.js"></script>
+<script src="script_tratti.js"></script>
 <script src="script_sventure.js"></script>
+<script src="script_contatori_token.js"></script>
 </body>
 </html>
