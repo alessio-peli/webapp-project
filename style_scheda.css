@@ -82,6 +82,52 @@ body {
   z-index: 10;
 }
 
+.effects-column {
+  display: flex;
+  flex-direction: row;  /* Status in orizzontale */
+  gap: 10px;
+  align-items: center;
+}
+
+.sventure-label {
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+  user-select: none;
+  margin-bottom: 5px;
+}
+
+.sventure-container {
+  display: flex;
+  flex-direction: column; /* Sventure in colonna */
+  gap: 10px;
+  align-items: center;
+}
+
+/* Esagoni status e sventure */
+.hex.status,
+.hex.sventura {
+  transform: rotate(90deg);  /* Mantieni forma esagono ruotata */
+}
+
+/* Testo negli status e sventure*/
+.hex.status span,
+.hex.sventura span {
+  transform: rotate(-90deg); /* Annulla rotazione per testo */
+  color: #333;
+  font-size: 14px;
+}
+
+.hex.status.active {
+  background-color: #f88;
+}
+
+.hex.sventura.active {
+  background-color: blueviolet;
+  color: white;
+}
+
 /* Colonna sinistra dei token */
 .left-column {
   position: absolute;
@@ -132,46 +178,4 @@ body {
   font-size: 22px;
   font-weight: bold;
   user-select: none;
-}
-
-.effects-column {
-  display: flex;
-  flex-direction: row;  /* Status in orizzontale */
-  gap: 10px;
-  align-items: center;
-}
-
-.sventure-label {
-  font-weight: bold;
-  font-size: 14px;
-  color: #333;
-  text-align: center;
-  user-select: none;
-  margin-bottom: 5px;
-}
-
-.sventure-container {
-  display: flex;
-  flex-direction: column; /* Sventure in colonna */
-  gap: 10px;
-  align-items: center;
-}
-
-/* Esagoni status e sventure */
-.hex.status,
-.hex.sventura {
-  transform: rotate(90deg);  /* Mantieni forma esagono ruotata */
-}
-
-/* Testo negli status e sventure*/
-.hex.status span,
-.hex.sventura span {
-  transform: rotate(-90deg); /* Annulla rotazione per testo */
-  color: #333;
-  font-size: 14px;
-}
-
-.hex.sventura.active {
-  background-color: blueviolet;
-  color: white;
 }
