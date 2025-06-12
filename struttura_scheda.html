@@ -9,6 +9,14 @@
 
   <!-- Colonna sinistra: Token -->
 <div class="left-column">
+
+  <!-- Bottone sacchetto e risultato -->
+  <div class="sacchetto-container">
+    <button id="btnSacchetto">Sacchetto</button>
+    <div id="sacchettoResult" class="sacchetto-result"></div>
+  </div>
+
+  <!-- contatore token bianchi -->
   <div class="token-box">
     <button class="token-button" onclick="updateToken('bianchi', -1)">−</button>
     <span id="token-bianchi-count">0</span>
@@ -16,6 +24,7 @@
     <div class="token-label">Token Bianchi</div>
   </div>
 
+  <!-- contatore token neri -->
   <div class="token-box">
     <button class="token-button" onclick="updateToken('neri', -1)">−</button>
     <span id="token-neri-count">0</span>
@@ -23,6 +32,7 @@
     <div class="token-label">Token Neri</div>
   </div>
 
+  <!-- contatore token casuali -->
   <div class="token-box">
     <button class="token-button" onclick="updateToken('causali', -1)">−</button>
     <span id="token-causali-count">0</span>
@@ -97,5 +107,6 @@
 <script src="script_status.js"></script>
 <script src="script_sventure.js"></script>
 <script src="script_contatori_token.js"></script>
+<script src="script_pescata.js"></script>
 </body>
 </html>
