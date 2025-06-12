@@ -183,13 +183,13 @@ body {
 /* sacchetto */
 .sacchetto-container {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
+  flex-direction: row;
+  gap: 10px;
   margin-bottom: 12px;
 }
 
-#btnSacchetto {
+#btnSacchetto,
+#btnResetSacchetto {
   padding: 6px 12px;
   font-size: 14px;
   background-color: #4a4a4a;
@@ -199,16 +199,21 @@ body {
   cursor: pointer;
 }
 
-#btnSacchetto:hover {
+#btnSacchetto:hover,
+#btnResetSacchetto:hover {
   background-color: #666;
 }
 
 .sacchetto-result {
-  font-size: 14px;
-  max-width: 220px;
+  position: absolute;
+  left: 220px; /* spazio tra colonne */
+  top: 40px;
+  max-width: 240px;
   background: #f7f7f7;
   border: 1px solid #ccc;
-  padding: 8px;
+  padding: 10px;
   border-radius: 6px;
+  font-size: 14px;
   white-space: pre-wrap;
+  z-index: 999;
 }

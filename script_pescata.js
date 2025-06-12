@@ -1,25 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("btnSacchetto").addEventListener("click", () => {
+  const resultBox = document.getElementById("sacchettoResult");
+  const sacchettoButton = document.getElementById("btnSacchetto");
+  const resetButton = document.getElementById("btnResetSacchetto");
+
+  sacchettoButton.addEventListener("click", () => {
     const sacchetto = [];
 
-    // Tratti attivi + token bianchi
-    const trattiAttivi = Array.from(document.querySelectorAll('.hex:not(.sventura):not(.status).active'));
+    // Tratti attivi => token bianchi
+    const trattiAttivi = document.querySelectorAll('.hex:not(.sventura):not(.status).active');
+    trattiAttivi.forEach(() => sacchetto.push("Token Bianco"));
+
+    // Token bianchi dai contatori
     const tokenBianchi = parseInt(document.getElementById("token-bianchi-count").textContent, 10) || 0;
-    trattiAttivi.forEach(tratto => {
-      const text = tratto.querySelector('span')?.textContent.trim();
-      if (text) sacchetto.push(text);
-    });
     for (let i = 0; i < tokenBianchi; i++) {
       sacchetto.push("Token Bianco");
     }
 
-    // Sventure attive + token neri
-    const sventureAttive = Array.from(document.querySelectorAll('.hex.sventura.active'));
+    // Sventure attive => token neri
+    const sventureAttive = document.querySelectorAll('.hex.sventura.active');
+    sventureAttive.forEach(() => sacchetto.push("Token Nero"));
+
+    // Token neri dai contatori
     const tokenNeri = parseInt(document.getElementById("token-neri-count").textContent, 10) || 0;
-    sventureAttive.forEach(sventura => {
-      const text = sventura.querySelector('span')?.textContent.trim();
-      if (text) sacchetto.push(text);
-    });
     for (let i = 0; i < tokenNeri; i++) {
       sacchetto.push("Token Nero");
     }
@@ -35,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
       [sacchetto[i], sacchetto[j]] = [sacchetto[j], sacchetto[i]];
     }
 
-    // Pesca
+    // Chiedi quanti estrarre
     let drawCount = prompt(`Ci sono ${sacchetto.length} elementi nel sacchetto. Quanti ne vuoi pescare? (1-4)?`);
     drawCount = parseInt(drawCount, 10);
     if (isNaN(drawCount) || drawCount < 1 || drawCount > 4) {
@@ -43,12 +45,27 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    const pescati = sacchetto.slice(0, drawCount);
-    const rimanenti = sacchetto.slice(drawCount);
+    // Estrai numero richiesto
+    const pescati = sacchetto.splice(0, drawCount);
+    const rimanenti = sacchetto;
+
+    // Ordina: prima bianchi, poi neri
+    const sortTokens = arr =>
+      arr.sort((a, b) => {
+        if (a === b) return 0;
+        return a === "Token Bianco" ? -1 : 1;
+      });
+
+    const pescatiOrdinati = sortTokens(pescati);
+    const rimanentiOrdinati = sortTokens(rimanenti);
 
     const output = 
-      `🎯 Hai pescato:\n- ${pescati.join('\n- ')}\n\n🧩 Nel sacchetto rimane:\n- ${rimanenti.join('\n- ')}`;
+      ` Hai pescato:\n- ${pescatiOrdinati.join('\n- ')}\n\n Nel sacchetto rimane:\n- ${rimanentiOrdinati.join('\n- ')}`;
     
-    document.getElementById("sacchettoResult").textContent = output;
+    resultBox.textContent = output;
+  });
+
+  resetButton.addEventListener("click", () => {
+    resultBox.textContent = "";
   });
 });
