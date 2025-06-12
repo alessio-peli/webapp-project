@@ -119,6 +119,15 @@ body {
   font-size: 14px;
 }
 
+.status-message {
+  margin-top: 10px;
+  padding: 8px;
+  background-color: #fdf3c3;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  color: #444;
+}
+
 .hex.status.active {
   background-color: #f88;
 }
