@@ -8,126 +8,124 @@
 <body>
 
   <!-- Nome PG -->
-<div class="nome-personaggio-container">
-  <h2 id="nomePersonaggio">Nome del Personaggio</h2>
-  <button id="btnNomePersonaggio">Inserisci Nome</button>
-</div>
-
+  <div class="nome-personaggio-container">
+    <h2 id="nomePersonaggio">Nome del Personaggio</h2>
+    <button id="btnNomePersonaggio">Inserisci Nome</button>
+  </div>
 
   <!-- Colonna sinistra: Token -->
-<div class="left-column">
+  <div class="left-column">
 
-  <!-- Bottone sacchetto e risultato -->
-  <div class="sacchetto-container">
-    <button id="btnSacchetto">Sacchetto</button>
-    <button id="btnResetSacchetto">Reset</button>
-  </div>
-
-  <!-- Spazio per il risultato della pescata -->
-  <div id="sacchettoResult" class="sacchetto-result"></div>
-
-  <!-- contatore token bianchi -->
-  <div class="token-box">
-    <button class="token-button" onclick="updateToken('bianchi', -1)">−</button>
-    <span id="token-bianchi-count">0</span>
-    <button class="token-button" onclick="updateToken('bianchi', 1)">+</button>
-    <div class="token-label">Token Bianchi</div>
-  </div>
-
-  <!-- contatore token neri -->
-  <div class="token-box">
-    <button class="token-button" onclick="updateToken('neri', -1)">−</button>
-    <span id="token-neri-count">0</span>
-    <button class="token-button" onclick="updateToken('neri', 1)">+</button>
-    <div class="token-label">Token Neri</div>
-  </div>
-
-  <!-- contatore token casuali -->
-  <div class="token-box">
-    <button class="token-button" onclick="updateToken('causali', -1)">−</button>
-    <span id="token-causali-count">0</span>
-    <button class="token-button" onclick="updateToken('causali', 1)">+</button>
-    <div class="token-label">Token Causali</div>
-  </div>
-</div>
- 
-<!-- RISULTATO PESCATA -->
-<div id="sacchettoResult" class="sacchetto-result"></div>
-
-<div class="tratti-container">
-
-<div class="tratti-container">
-  <div class="tratti-grid">
-    <!-- Prima riga -->
-    <div class="tratti-row offset-center">
-      <div class="hex"></div>
-      <div class="hex"></div>
-      <div class="hex"></div>
+    <!-- Bottone sacchetto e risultato -->
+    <div class="sacchetto-container">
+      <button id="btnSacchetto">Sacchetto</button>
+      <button id="btnResetSacchetto">Reset</button>
     </div>
 
-    <!-- Seconda riga -->
-    <div class="tratti-row offset-half">
-      <div class="hex"></div>
-      <div class="hex"></div>
-      <div class="hex"></div>
-      <div class="hex"></div>
+    <!-- Spazio per il risultato della pescata -->
+    <div id="sacchettoResult" class="sacchetto-result"></div>
+
+    <!-- contatore token bianchi -->
+    <div class="token-box">
+      <button class="token-button" onclick="updateToken('bianchi', -1)">−</button>
+      <span id="token-bianchi-count">0</span>
+      <button class="token-button" onclick="updateToken('bianchi', 1)">+</button>
+      <div class="token-label">Token Bianchi</div>
     </div>
 
-    <!-- Terza riga -->
-    <div class="tratti-row">
-      <div class="hex"></div>
-      <div class="hex"></div>
-      <div class="hex"></div>
-      <div class="hex"></div>
-      <div class="hex"></div>
+    <!-- contatore token neri -->
+    <div class="token-box">
+      <button class="token-button" onclick="updateToken('neri', -1)">−</button>
+      <span id="token-neri-count">0</span>
+      <button class="token-button" onclick="updateToken('neri', 1)">+</button>
+      <div class="token-label">Token Neri</div>
     </div>
 
-    <!-- Quarta riga -->
-    <div class="tratti-row offset-half">
-      <div class="hex"></div>
-      <div class="hex"></div>
-      <div class="hex"></div>
-      <div class="hex"></div>
-    </div>
-
-    <!-- Quinta riga -->
-    <div class="tratti-row offset-center">
-      <div class="hex"></div>
-      <div class="hex"></div>
-      <div class="hex"></div>
+    <!-- contatore token casuali -->
+    <div class="token-box">
+      <button class="token-button" onclick="updateToken('causali', -1)">−</button>
+      <span id="token-causali-count">0</span>
+      <button class="token-button" onclick="updateToken('causali', 1)">+</button>
+      <div class="token-label">Token Causali</div>
     </div>
   </div>
-</div>
 
-<!-- Colonna destra: status + sventure -->
-<div class="right-column">
-  <div class="effects-column">
-    <div class="hex status"><span>adrenalina</span></div>
-    <div class="hex status"><span>confusione</span></div>
+  <!-- Centro: griglia tratti + bottoni esporta/importa -->
+  <div class="center-container">
+    <div class="tratti-container">
+      <div class="tratti-grid">
+        <!-- Prima riga -->
+        <div class="tratti-row offset-center">
+          <div class="hex"></div>
+          <div class="hex"></div>
+          <div class="hex"></div>
+        </div>
+
+        <!-- Seconda riga -->
+        <div class="tratti-row offset-half">
+          <div class="hex"></div>
+          <div class="hex"></div>
+          <div class="hex"></div>
+          <div class="hex"></div>
+        </div>
+
+        <!-- Terza riga -->
+        <div class="tratti-row">
+          <div class="hex"></div>
+          <div class="hex"></div>
+          <div class="hex"></div>
+          <div class="hex"></div>
+          <div class="hex"></div>
+        </div>
+
+        <!-- Quarta riga -->
+        <div class="tratti-row offset-half">
+          <div class="hex"></div>
+          <div class="hex"></div>
+          <div class="hex"></div>
+          <div class="hex"></div>
+        </div>
+
+        <!-- Quinta riga -->
+        <div class="tratti-row offset-center">
+          <div class="hex"></div>
+          <div class="hex"></div>
+          <div class="hex"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="buttons-export-import">
+      <button onclick="esportaEsagoni()">Esporta</button>
+      <input type="file" id="importFile" accept=".json" style="display:none;">
+      <button onclick="document.getElementById('importFile').click()">Importa</button>
+    </div>
   </div>
 
-  <div class="sventure-label">sventure</div>
+  <!-- Colonna destra: status + sventure -->
+  <div class="right-column">
+    <div class="effects-column">
+      <div class="hex status"><span>adrenalina</span></div>
+      <div class="hex status"><span>confusione</span></div>
+    </div>
 
-  <div class="sventure-container">
-    <div class="hex sventura"></div>
-    <div class="hex sventura"></div>
-    <div class="hex sventura"></div>
-    <div class="hex sventura"></div>
+    <div class="sventure-label">sventure</div>
+
+    <div class="sventure-container">
+      <div class="hex sventura"></div>
+      <div class="hex sventura"></div>
+      <div class="hex sventura"></div>
+      <div class="hex sventura"></div>
+    </div>
   </div>
-</div>
 
-<button onclick="esportaEsagoni()">Esporta</button>
-<input type="file" id="importFile" accept=".json" style="display:none;">
-<button onclick="document.getElementById('importFile').click()">Importa</button>
-
-
-<script src="script_nomePG.js"></script>
-<script src="script_import.js"></script>
-<script src="script_esport.js"></script>
-<script src="script_tratti.js"></script>
-<script src="script_status.js"></script>
-<script src="script_sventure.js"></script>
-<script src="script_contatori_token.js"></script>
-<script src="script_pescata.js"></script>
+  <script src="script_nomePG.js"></script>
+  <script src="script_import.js"></script>
+  <script src="script_esport.js"></script>
+  <script src="script_tratti.js"></script>
+  <script src="script_status.js"></script>
+  <script src="script_sventure.js"></script>
+  <script src="script_contatori_token.js"></script>
+  <script src="script_pescata.js"></script>
 </body>
 </html>

@@ -7,6 +7,141 @@ body {
   overflow: hidden;
 }
 
+/* Nome Personaggio */
+.nome-personaggio-container {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 1000;
+}
+
+#nomePersonaggio {
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+#btnNomePersonaggio {
+  margin-top: 4px;
+  padding: 4px 10px;
+  font-size: 12px;
+  background-color: #4a4a4a;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#btnNomePersonaggio:hover {
+  background-color: #666;
+}
+
+/* Colonna sinistra dei token */
+.left-column {
+  position: absolute;
+  bottom: 40px; 
+  left: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+  align-items: center;
+  z-index: 10;
+}
+
+.token-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 12px;
+  border: 1.5px solid #888;
+  border-radius: 10px;
+  width: 140px;
+}
+
+.token-button {
+  font-size: 20px;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #666;
+  border-radius: 5px;
+  background-color: #eee;
+  cursor: pointer;
+}
+
+.token-button:hover {
+  background-color: #ddd;
+}
+
+.token-label {
+  font-size: 16px;
+  color: #222;
+  text-align: center;
+  user-select: none;
+  margin-top: 6px;
+}
+
+.token-box span {
+  font-size: 22px;
+  font-weight: bold;
+  user-select: none;
+}
+
+/* sacchetto */
+.sacchetto-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+#btnSacchetto,
+#btnResetSacchetto {
+  padding: 6px 12px;
+  font-size: 14px;
+  background-color: #4a4a4a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#btnSacchetto:hover,
+#btnResetSacchetto:hover {
+  background-color: #666;
+}
+
+.sacchetto-result {
+  position: absolute;
+  left: 220px; /* spazio tra colonne */
+  top: 40px;
+  max-width: 240px;
+  background: #f7f7f7;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  white-space: pre-wrap;
+  z-index: 999;
+}
+
+/* Centro: container per griglia e bottoni */
+.center-container {
+  position: absolute;
+  top: 110px; 
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px; 
+  width: max-content;
+  z-index: 10;
+}
+
 /* GRIGLIA TRATTI */
 .tratti-container {
   display: flex;
@@ -137,68 +272,14 @@ body {
   color: white;
 }
 
-/* Colonna sinistra dei token */
-.left-column {
-  position: absolute;
-  bottom: 40px; 
-  left: 40px;
+/* Bottoni Esporta e Importa */
+.buttons-export-import {
+  margin-top: 20px;
   display: flex;
-  flex-direction: column;
-  gap: 20px; 
-  align-items: center;
-  z-index: 10;
+  gap: 12px;
 }
 
-.token-box {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-direction: column;
-  background-color: #fff;
-  padding: 12px;
-  border: 1.5px solid #888;
-  border-radius: 10px;
-  width: 140px;
-}
-
-.token-button {
-  font-size: 20px;
-  width: 34px;
-  height: 34px;
-  border: 1px solid #666;
-  border-radius: 5px;
-  background-color: #eee;
-  cursor: pointer;
-}
-
-.token-button:hover {
-  background-color: #ddd;
-}
-
-.token-label {
-  font-size: 16px;
-  color: #222;
-  text-align: center;
-  user-select: none;
-  margin-top: 6px;
-}
-
-.token-box span {
-  font-size: 22px;
-  font-weight: bold;
-  user-select: none;
-}
-
-/* sacchetto */
-.sacchetto-container {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  margin-bottom: 12px;
-}
-
-#btnSacchetto,
-#btnResetSacchetto {
+.buttons-export-import button {
   padding: 6px 12px;
   font-size: 14px;
   background-color: #4a4a4a;
@@ -208,51 +289,6 @@ body {
   cursor: pointer;
 }
 
-#btnSacchetto:hover,
-#btnResetSacchetto:hover {
-  background-color: #666;
-}
-
-.sacchetto-result {
-  position: absolute;
-  left: 220px; /* spazio tra colonne */
-  top: 40px;
-  max-width: 240px;
-  background: #f7f7f7;
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 6px;
-  font-size: 14px;
-  white-space: pre-wrap;
-  z-index: 999;
-}
-
-.nome-personaggio-container {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  z-index: 1000;
-}
-
-#nomePersonaggio {
-  margin: 0;
-  font-size: 22px;
-  font-weight: bold;
-}
-
-#btnNomePersonaggio {
-  margin-top: 4px;
-  padding: 4px 10px;
-  font-size: 12px;
-  background-color: #4a4a4a;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-#btnNomePersonaggio:hover {
+.buttons-export-import button:hover {
   background-color: #666;
 }
