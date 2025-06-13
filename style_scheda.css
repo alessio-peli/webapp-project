@@ -10,7 +10,7 @@ body {
 /* Nome Personaggio */
 .nome-personaggio-container {
   position: absolute;
-  top: 20px;
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
