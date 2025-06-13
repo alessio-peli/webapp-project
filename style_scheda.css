@@ -41,7 +41,7 @@ body {
 /* Colonna sinistra dei token */
 .left-column {
   position: absolute;
-  bottom: 40px; 
+  bottom: 130px; 
   left: 40px;
   display: flex;
   flex-direction: column;
@@ -131,7 +131,7 @@ body {
 /* Centro: container per griglia e bottoni */
 .center-container {
   position: absolute;
-  top: 110px; 
+  top: 150px; 
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -236,7 +236,7 @@ body {
 .sventure-container {
   display: flex;
   flex-direction: column; /* Sventure in colonna */
-  gap: 10px;
+  gap: 20px;
   align-items: center;
 }
 
@@ -274,7 +274,7 @@ body {
 
 /* Bottoni Esporta e Importa */
 .buttons-export-import {
-  margin-top: 20px;
+  margin-top: 70px;
   display: flex;
   gap: 12px;
 }
