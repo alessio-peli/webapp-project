@@ -7,6 +7,13 @@
 </head>
 <body>
 
+  <!-- Nome PG -->
+<div class="nome-personaggio-container">
+  <h2 id="nomePersonaggio">Nome del Personaggio</h2>
+  <button id="btnNomePersonaggio">Inserisci Nome</button>
+</div>
+
+
   <!-- Colonna sinistra: Token -->
 <div class="left-column">
 
@@ -109,7 +116,14 @@
   </div>
 </div>
 
+<button onclick="esportaEsagoni()">Esporta</button>
+<input type="file" id="importFile" accept=".json" style="display:none;">
+<button onclick="document.getElementById('importFile').click()">Importa</button>
 
+
+<script src="script_nomePG.js"></script>
+<script src="script_import.js"></script>
+<script src="script_esport.js"></script>
 <script src="script_tratti.js"></script>
 <script src="script_status.js"></script>
 <script src="script_sventure.js"></script>
